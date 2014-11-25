@@ -16,7 +16,9 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
-        android:text="@string/niño" />
+        android:text="@string/niño" 
+        android:onClick="ninoBtnClick"
+        />
 
     <Button
         android:id="@+id/ninaBtn"
@@ -27,6 +29,8 @@
         android:layout_centerVertical="true"
         android:layout_margin="20dp"
         android:layout_marginTop="100dp"
-        android:text="@string/niña" />
+        android:text="@string/niña" 
+        android:onClick="ninaBtnClick"
+        />
 
 </RelativeLayout>
