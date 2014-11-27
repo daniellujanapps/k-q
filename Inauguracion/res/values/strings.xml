@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Inauguracion</string>
+    <string name="app_name">Inauguracion Kings&amp;Queens</string>
     <string name="hello_world">Hello world!</string>
-    <string name="niño">Niño</string>
-    <string name="niña">Niña</string>
-    <string name="title_activity_foto">FotoActivity</string>
-    <string name="dummy_button">Dummy Button</string>
+    <string name="frozenSerio">Frozen Serio</string>
+    <string name="frozenBroma">Frozen Broma</string>
+    <string name="title_activity_foto">Foto</string>
+    <string name="foto_button">Tomar Foto!</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="superheroesLego">Superheroes Lego</string>
+    <string name="superheroesSerio">Superheroes Serio</string>
 
 </resources>

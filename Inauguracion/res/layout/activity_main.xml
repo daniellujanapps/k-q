@@ -3,34 +3,55 @@
     android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#0099cc"
     android:orientation="horizontal"
     tools:context="${relativePackage}.${activityClass}" >
 
     <Button
-        android:id="@+id/ninoBtn"
-        android:layout_width="fill_parent"
-        android:layout_height="100dp"
-        android:layout_alignParentEnd="false"
+        android:id="@+id/frozenBromaBtn"
+        android:layout_width="610dp"
+        android:layout_height="320dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
-        android:text="@string/niño" 
-        android:onClick="ninoBtnClick"
-        />
+        android:onClick="frozenBromaBtnClick"
+        android:text="@string/frozenBroma" />
 
     <Button
-        android:id="@+id/ninaBtn"
-        android:layout_width="fill_parent"
+        android:id="@+id/frozenSerioBtn"
+        android:layout_width="610dp"
         android:layout_height="100dp"
-        android:layout_below="@id/ninoBtn"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/frozenBromaBtn"
         android:layout_centerVertical="true"
-        android:layout_margin="20dp"
-        android:layout_marginTop="100dp"
-        android:text="@string/niña" 
-        android:onClick="ninaBtnClick"
-        />
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:onClick="frozenSerioBtnClick"
+        android:text="@string/frozenSerio" />
+
+    <Button
+        android:id="@+id/superheroesLegoBtn"
+        android:layout_width="610dp"
+        android:layout_height="320dp"
+        android:layout_alignBottom="@+id/frozenBromaBtn"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@id/frozenBromaBtn"
+        android:text="@string/superheroesLego" 
+        android:onClick="superheroesBromaBtnClick"/>
+
+    <Button
+        android:id="@+id/superheroesSerioBtn"
+        android:layout_width="610dp"
+        android:layout_height="300dp"
+        android:layout_alignLeft="@id/superheroesLegoBtn"
+        android:layout_alignRight="@+id/superheroesLegoBtn"
+        android:layout_alignTop="@id/frozenSerioBtn"
+        android:layout_toRightOf="@id/frozenSerioBtn"
+        android:text="@string/superheroesSerio" 
+        android:onClick="superheroesSerioBtnClick"/>
 
 </RelativeLayout>
