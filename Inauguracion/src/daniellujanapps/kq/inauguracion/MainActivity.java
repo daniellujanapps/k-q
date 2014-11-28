@@ -52,14 +52,14 @@ public class MainActivity extends Activity {
     	startActivity(intent);
     }
     
-    public void superheroesBromaBtnClick(View v){
+    public void superheroesFrozenBtnClick(View v){
 //    	CharSequence text = "Ninaaaa!";
 //    	int duration = Toast.LENGTH_SHORT;
 //
 //    	Toast toast = Toast.makeText(getApplicationContext(), text, duration);
 //    	toast.show();
     	Intent intent = new Intent(this, FotoActivity.class);
-    	String message = "superheroesBroma";
+    	String message = "superheroesFrozen";
     	intent.putExtra("message", message);
     	startActivity(intent);
     }

@@ -32,7 +32,7 @@
         android:text="@string/frozenSerio" />
 
     <Button
-        android:id="@+id/superheroesLegoBtn"
+        android:id="@+id/superheroesFrozenBtn"
         android:layout_width="610dp"
         android:layout_height="320dp"
         android:layout_alignBottom="@+id/frozenBromaBtn"
@@ -40,18 +40,19 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@id/frozenBromaBtn"
-        android:text="@string/superheroesLego" 
-        android:onClick="superheroesBromaBtnClick"/>
+        android:onClick="superheroesFrozenBtnClick"
+        android:text="@string/frozenSuperheroes" />
 
     <Button
         android:id="@+id/superheroesSerioBtn"
         android:layout_width="610dp"
         android:layout_height="300dp"
-        android:layout_alignLeft="@id/superheroesLegoBtn"
-        android:layout_alignRight="@+id/superheroesLegoBtn"
+        android:layout_alignBottom="@id/frozenSerioBtn"
+        android:layout_alignLeft="@id/superheroesFrozenBtn"
+        android:layout_alignRight="@+id/superheroesFrozenBtn"
         android:layout_alignTop="@id/frozenSerioBtn"
         android:layout_toRightOf="@id/frozenSerioBtn"
-        android:text="@string/superheroesSerio" 
-        android:onClick="superheroesSerioBtnClick"/>
+        android:onClick="superheroesSerioBtnClick"
+        android:text="@string/superheroesSerio" />
 
 </RelativeLayout>

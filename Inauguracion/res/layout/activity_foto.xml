@@ -40,7 +40,7 @@
             android:background="@color/black_overlay"
             android:paddingBottom="20dp" >
                 
-                <org.opencv.android.JavaCameraView
+                <daniellujanapps.kq.inauguracion.CameraView
                     android:id="@+id/cameraCvView"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
