@@ -92,6 +92,13 @@ public class FotoActivity extends Activity implements CvCameraViewListener2 {
 	private Mat letreroMaskInv;
 	private Rect letreroRoi;
 	private Mat letreroSm;
+	
+	private Bitmap kq;
+	private Mat kqMat;
+	private Mat kqMask;
+	private Mat kqMaskInv;
+	private Rect kqRoi;
+	private Mat kqSm;
 
 	private Bitmap nubes;
 	private Mat nubesMat;
@@ -301,9 +308,19 @@ public class FotoActivity extends Activity implements CvCameraViewListener2 {
 //				getResources(), R.drawable.templatebiblio), 1080, 330, false);
 //		templateMat = new Mat();
 //		Utils.bitmapToMat(template, templateMat);		
+		/*************************KQ**********************************/
+		kq = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(
+				getResources(), R.drawable.kq2), 250, 120, false);
+		kqMat = new Mat();
+		Utils.bitmapToMat(kq, kqMat);
+		kqMask = new Mat();
+		kqMaskInv = new Mat();
+		Imgproc.threshold(kqMat, kqMask, 1, 255, Imgproc.THRESH_BINARY);
+		Core.bitwise_not(kqMask, kqMaskInv);
+		
 		/*************************LETRERO**********************************/
 		letrero = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(
-				getResources(), R.drawable.letrero), 980, 300, false);
+				getResources(), R.drawable.letrero), 970, 290, false);
 		letreroMat = new Mat();
 		Utils.bitmapToMat(letrero, letreroMat);
 		letreroMask = new Mat();
@@ -313,7 +330,7 @@ public class FotoActivity extends Activity implements CvCameraViewListener2 {
 		
 		/****************************NUBES**********************************/
 		nubes = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(
-				getResources(), R.drawable.nubes2), 520, 280, false);
+				getResources(), R.drawable.nubes3), 520, 280, false);
 		nubesMat = new Mat();
 		Utils.bitmapToMat(nubes, nubesMat);
 		nubesMask = new Mat();
@@ -365,17 +382,18 @@ public class FotoActivity extends Activity implements CvCameraViewListener2 {
 		}else if(foto.equals(superheroesFrozen)){
 			/*************************************************************/
 
-			annaElsaSerio = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(
-					getResources(), R.drawable.annaelsa2), 390, 640, false);
-			annaElsaSerioMat = new Mat();
-			Utils.bitmapToMat(annaElsaSerio, annaElsaSerioMat);
-			annaElsaSerioMask = new Mat();
-			annaElsaSerioMaskInv = new Mat();
-			Imgproc.threshold(annaElsaSerioMat, annaElsaSerioMask, 1, 255, Imgproc.THRESH_BINARY);
-			Core.bitwise_not(annaElsaSerioMask, annaElsaSerioMaskInv);
+			annaElsaBroma = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(
+					getResources(), R.drawable.annaelsabroma), 450, 680, false);
+			annaElsaBromaMat = new Mat();
+			Utils.bitmapToMat(annaElsaBroma, annaElsaBromaMat);
+			annaElsaBromaMask = new Mat();
+			annaElsaBromaMaskInv = new Mat();
+			Imgproc.threshold(annaElsaBromaMat, annaElsaBromaMask, 1, 255, Imgproc.THRESH_BINARY);
+			Core.bitwise_not(annaElsaBromaMask, annaElsaBromaMaskInv);
 
+			/*************************************************************/
 			capitanSerio = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(
-					getResources(), R.drawable.capitanamerica), 400, 640, false);
+					getResources(), R.drawable.capitanamerica), 450, 690, false);
 			capitanSerioMat = new Mat();
 			Utils.bitmapToMat(capitanSerio, capitanSerioMat);
 			capitanSerioMask = new Mat();
@@ -393,14 +411,31 @@ public class FotoActivity extends Activity implements CvCameraViewListener2 {
 			Core.bitwise_not(supermanSerioMask, supermanSerioMaskInv);
 			/*************************************************************/
 
-			capitanSerio = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(
-					getResources(), R.drawable.capitanamerica), 420, 640, false);
-			capitanSerioMat = new Mat();
-			Utils.bitmapToMat(capitanSerio, capitanSerioMat);
-			capitanSerioMask = new Mat();
-			capitanSerioMaskInv = new Mat();
-			Imgproc.threshold(capitanSerioMat, capitanSerioMask, 1, 255, Imgproc.THRESH_BINARY);
-			Core.bitwise_not(capitanSerioMask, capitanSerioMaskInv);
+//			capitanSerio = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(
+//					getResources(), R.drawable.capitanamerica), 420, 640, false);
+//			capitanSerioMat = new Mat();
+//			Utils.bitmapToMat(capitanSerio, capitanSerioMat);
+//			capitanSerioMask = new Mat();
+//			capitanSerioMaskInv = new Mat();
+//			Imgproc.threshold(capitanSerioMat, capitanSerioMask, 1, 255, Imgproc.THRESH_BINARY);
+//			Core.bitwise_not(capitanSerioMask, capitanSerioMaskInv);
+			annaElsaSerio = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(
+					getResources(), R.drawable.annaelsa2), 390, 640, false);
+			annaElsaSerioMat = new Mat();
+			Utils.bitmapToMat(annaElsaSerio, annaElsaSerioMat);
+			annaElsaSerioMask = new Mat();
+			annaElsaSerioMaskInv = new Mat();
+			Imgproc.threshold(annaElsaSerioMat, annaElsaSerioMask, 1, 255, Imgproc.THRESH_BINARY);
+			Core.bitwise_not(annaElsaSerioMask, annaElsaSerioMaskInv);
+			
+			olaf = Bitmap.createScaledBitmap(BitmapFactory.decodeResource(
+					getResources(), R.drawable.olaf), 220, 390, false);
+			olafMat = new Mat();
+			Utils.bitmapToMat(olaf, olafMat);
+			olafMask = new Mat();
+			olafMaskInv = new Mat();
+			Imgproc.threshold(olafMat, olafMask, 1, 255, Imgproc.THRESH_BINARY);
+			Core.bitwise_not(olafMask, olafMaskInv);
 		}
 		/*************************************************************/
 
@@ -426,9 +461,19 @@ public class FotoActivity extends Activity implements CvCameraViewListener2 {
 
 		image = placeLeftCharacter(image);
 		image = placeRightCharacter(image);
+
+		
+		/*****************kq********************/
+		kqRoi = new Rect((int) (image.cols()-kqMat.cols()), image.rows()-kqMat.rows(), kqMat.cols(), kqMat.rows());
+		kqSm = image.submat(kqRoi);
+		Core.bitwise_and(kqSm, kqMaskInv, kqSm);
+		//		Imgproc.cvtColor(mask, mask, Imgproc.COLOR_BGR2GRAY);
+		Core.bitwise_and(kqMat, kqMask, kqMat);
+
+		Core.addWeighted(kqSm, 1.0, kqMat, 1.0, 0, kqSm);
 		
 		/*****************LETRERO********************/
-		letreroRoi = new Rect((int) ((image.cols()-letreroMat.cols())*0.40),image.rows()- letreroMat.rows(), letreroMat.cols(), letreroMat.rows());
+		letreroRoi = new Rect((int) ((image.cols()-letreroMat.cols())*0.80), 1, letreroMat.cols(), letreroMat.rows());
 		letreroSm = image.submat(letreroRoi);
 		Core.bitwise_and(letreroSm, letreroMaskInv, letreroSm);
 		//		Imgproc.cvtColor(mask, mask, Imgproc.COLOR_BGR2GRAY);
@@ -437,7 +482,7 @@ public class FotoActivity extends Activity implements CvCameraViewListener2 {
 		Core.addWeighted(letreroSm, 1.0, letreroMat, 1.0, 0, letreroSm);
 		
 		/*****************NUBES*********************/
-		nubesRoi = new Rect((int) ((image.cols()-nubesMat.cols())*0.90),1, nubesMat.cols(), nubesMat.rows());
+		nubesRoi = new Rect(1,1, nubesMat.cols(), nubesMat.rows());
 		nubesSm = image.submat(nubesRoi);
 		Core.bitwise_and(nubesSm, nubesMaskInv, nubesSm);
 		//		Imgproc.cvtColor(mask, mask, Imgproc.COLOR_BGR2GRAY);
@@ -473,16 +518,16 @@ public class FotoActivity extends Activity implements CvCameraViewListener2 {
 
 			Core.addWeighted(annaElsaSm, 1.0, annaElsaBromaMat, 1.0, 0, annaElsaSm);
 		}else if(foto.equals(frozenSerio) || foto.equals(superheroesFrozen)){
-			x = (int)((image.cols())*0.10);
-			y = (int)(image.rows()-annaElsaSerioMat.rows());
-			Rect roiAnnaElsaRoi = new Rect(x,y, annaElsaSerioMat.cols(), annaElsaSerioMat.rows());
+			x = (int)(1);
+			y = (int)(image.rows()-annaElsaBromaMat.rows());
+			Rect roiAnnaElsaRoi = new Rect(x,y, annaElsaBromaMat.cols(), annaElsaBromaMat.rows());
 			Mat annaElsaSm = image.submat(roiAnnaElsaRoi);
 
-			Core.bitwise_and(annaElsaSm, annaElsaSerioMaskInv, annaElsaSm);
+			Core.bitwise_and(annaElsaSm, annaElsaBromaMaskInv, annaElsaSm);
 			//		Imgproc.cvtColor(mask, mask, Imgproc.COLOR_BGR2GRAY);
 			//		Core.bitwise_and(annaElsaSm, annaElsaMat, annaElsaSm, mask);
 
-			Core.addWeighted(annaElsaSm, 1.0, annaElsaSerioMat, 1.0, 0, annaElsaSm);			
+			Core.addWeighted(annaElsaSm, 1.0, annaElsaBromaMat, 1.0, 0, annaElsaSm);		
 		}else if(foto.equals(superheroesSerio)){
 			x = (int)((image.cols())*0.05);
 			y = (int)((image.rows())*0.10);
@@ -494,6 +539,18 @@ public class FotoActivity extends Activity implements CvCameraViewListener2 {
 			//		Core.bitwise_and(annaElsaSm, annaElsaMat, annaElsaSm, mask);
 
 			Core.addWeighted(supermanSm, 1.0, supermanSerioMat, 1.0, 0, supermanSm);
+			
+			x = (int)(x+supermanSerioMat.cols());
+			y = (int)((image.rows()-olafMat.rows())*0.95);
+			Rect olafRoi = new Rect(x,y, olafMat.cols(), olafMat.rows());
+			Mat olafSm = image.submat(olafRoi);
+
+			Core.bitwise_and(olafSm, olafMaskInv, olafSm);
+			//		Imgproc.cvtColor(mask, mask, Imgproc.COLOR_BGR2GRAY);
+			//		Core.bitwise_and(annaElsaSm, annaElsaMat, annaElsaSm, mask);
+
+			Core.addWeighted(olafSm, 1.0, olafMat, 1.0, 0, olafSm);
+			
 		}
 		return image;
 	}
@@ -521,7 +578,7 @@ public class FotoActivity extends Activity implements CvCameraViewListener2 {
 
 			Core.addWeighted(olafSm, 1.0, olafMat, 1.0, 0, olafSm);
 		}else if(foto.equals(superheroesSerio) || foto.equals(superheroesFrozen)){
-			x = (int)((image.cols()-capitanSerioMat.cols())*0.90);
+			x = (int)((image.cols()-capitanSerioMat.cols())*0.95);
 			y = (int)((image.rows())*0.30);
 			Rect capitanRoi = new Rect(x,y, capitanSerioMat.cols(), capitanSerioMat.rows());
 			Mat capitanSm = image.submat(capitanRoi);
@@ -531,6 +588,17 @@ public class FotoActivity extends Activity implements CvCameraViewListener2 {
 			//		Core.bitwise_and(annaElsaSm, annaElsaMat, annaElsaSm, mask);
 
 			Core.addWeighted(capitanSm, 1.0, capitanSerioMat, 1.0, 0, capitanSm);
+			
+//			x = (int)((image.cols()-annaElsaSerioMat.rows())*0.90);
+//			y = (int)(image.rows()-annaElsaSerioMat.rows());
+//			Rect roiAnnaElsaRoi = new Rect(x,y, annaElsaSerioMat.cols(), annaElsaSerioMat.rows());
+//			Mat annaElsaSm = image.submat(roiAnnaElsaRoi);
+//
+//			Core.bitwise_and(annaElsaSm, annaElsaSerioMaskInv, annaElsaSm);
+//			//		Imgproc.cvtColor(mask, mask, Imgproc.COLOR_BGR2GRAY);
+//			//		Core.bitwise_and(annaElsaSm, annaElsaMat, annaElsaSm, mask);
+//
+//			Core.addWeighted(annaElsaSm, 1.0, annaElsaSerioMat, 1.0, 0, annaElsaSm);	
 		}
 		return image;
 	}
